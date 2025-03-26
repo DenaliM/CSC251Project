@@ -105,26 +105,26 @@ public class Policy {
 
     // Calculates the price of the insurance policy
     public double calculatePolicyPrice() {
-        double basePrice = 600;
-        double additionalFee = 0;
+        final double BASEPRICE = 600;
+        final double ADDITIONALFEE = 0;
 
         // Checking if age is over 50, if so apply fee
         if (age > 50) {
-            additionalFee += 75;
+            ADDITIONALFEE += 75;
         }
 
         // Checking if smoking status is smoker, if so apply fee
         if (smokingStatus.equals("smoker")) {
-            additionalFee += 100;
+            ADDITIONALFEE += 100;
         }
 
         // Calculating BMI and check if BMI is greater than 35, if so apply fee
         double bmi = calculateBMI();
         if (bmi > 35) {
-            additionalFee += (bmi - 35) * 20;
+            ADDITIONALFEE += (bmi - 35) * 20;
         }
 
         // Adding everything together to get a total
-        return basePrice + additionalFee;
+        return BASEPRICE + ADDITIONALFEE;
     }
 }
