@@ -21,7 +21,17 @@ public class Policy {
         weight = 0.0;
     }
 
-    // Constructor using arguments to apply values to private values
+    /* 
+        Constructor using arguments to apply values to private values
+        @policyNumberSent the policy number from the user
+        @providerNameSent the provider name from the user
+        @firstNameSent the first name from the user
+        @lastNameSent the last name from the user
+        @ageSent the age from the user
+        @smokingStatusSent the smoking status from the user
+        @heightSent the height from the user
+        @weightSent the weight from the user
+    */
     public Policy(String policyNumberSent, String providerNameSent, String firstNameSent, String lastNameSent, int ageSent, String smokingStatusSent, double heightSent, double weightSent) {
         policyNumber = policyNumberSent;
         providerName = providerNameSent;
@@ -34,76 +44,147 @@ public class Policy {
     }
 
     // All necessary getter and setter methods
+
+    /*
+     * Gets the policy number
+     * @return the policy number back to user
+     */
     public String getPolicyNumber() {
         return policyNumber;
     }
 
+    /*
+     * Sets the policy number
+     * @policyNumberSent the policy number from to user
+     */
     public void setPolicyNumber(String policyNumberSent) {
         policyNumber = policyNumberSent;
     }
 
+    /*
+     * Gets the provider name
+     * @return the provider name back to user
+     */
     public String getProviderName() {
         return providerName;
     }
 
+    /*
+     * Sets the provider name
+     * @providerNameSent the provider name from to user
+     */
     public void setProviderName(String providerNameSent) {
         providerName = providerNameSent;
     }
 
+    /*
+     * Gets the first name
+     * @return the first name back to user
+     */
     public String getFirstName() {
         return firstName;
     }
 
+    /*
+     * Sets the first name
+     * @firstNameSent the first name from to user
+     */
     public void setFirstName(String firstNameSent) {
         firstName = firstNameSent;
     }
 
+    /*
+     * Gets the last name
+     * @return the last name back to user
+     */
     public String getLastName() {
         return lastName;
     }
 
+    /*
+     * Sets the last name
+     * @lastNameSent the last name back to user
+     */
     public void setLastName(String lastNameSent) {
         lastName = lastNameSent;
     }
 
+    /*
+     * Gets the age
+     * @return the age back to user
+     */
     public int getAge() {
         return age;
     }
 
+    /*
+     * Sets the age
+     * @ageSent the age from to user
+     */
     public void setAge(int ageSent) {
         age = ageSent;
     }
 
+    /*
+     * Gets the smoking status
+     * @return the smoking status back to user
+     */
     public String getSmokingStatus() {
         return smokingStatus;
     }
 
+    /*
+     * Sets the smoking status
+     * @setSmokingStatus the smoking status from to user
+     */
     public void setSmokingStatus(String smokingStatusSent) {
         smokingStatus = smokingStatusSent;
     }
 
+    /*
+     * Gets the height
+     * @return the height back to user
+     */
     public double getHeight() {
         return height;
     }
 
+    /*
+     * Sets the height
+     * @setHeight the height back to user
+     */
     public void setHeight(double heightSent) {
         height = heightSent;
     }
 
+    /*
+     * Gets the weight
+     * @return the weight back to user
+     */
     public double getWeight() {
         return weight;
     }
 
+    /*
+     * Gets the weight
+     * @setWeight the weight from to user
+     */
     public void setWeight(double weightSent) {
         weight = weightSent;
     }
 
-    // Calculating the BMI
+    /*
+     * Calculating the BMI
+     * @return the BMI back to user
+     */
     public double calculateBMI() {
         return (weight * 703) / (height * height);
     }
 
-    // Calculates the price of the insurance policy
+    /*
+     * Calculates the price of the insurance policy
+     * @return the total insurance policy price
+     */
     public double calculatePolicyPrice() {
         final double BASEPRICE = 600;
         final double ADDITIONALFEE = 0;
