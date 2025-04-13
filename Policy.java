@@ -1,6 +1,6 @@
 public class Policy {
     // Variables
-    private String policyNumber;
+    private int policyNumber;
     private String providerName;
     private String firstName;
     private String lastName;
@@ -11,14 +11,14 @@ public class Policy {
 
     // Setting the default values using a no-arg constructor
     public Policy() {
-        policyNumber = "";
+        policyNumber = 0;
         providerName = "";
         firstName = "";
         lastName = "";
         age = 0;
         smokingStatus = "non-smoker";
-        height = 0.0;
-        weight = 0.0;
+        height = 0;
+        weight = 0;
     }
 
     /* 
@@ -32,7 +32,7 @@ public class Policy {
         @param heightSent the height from the user
         @param weightSent the weight from the user
     */
-    public Policy(String policyNumberSent, String providerNameSent, String firstNameSent, String lastNameSent, int ageSent, String smokingStatusSent, double heightSent, double weightSent) {
+    public Policy(int policyNumberSent, String providerNameSent, String firstNameSent, String lastNameSent, int ageSent, String smokingStatusSent, double heightSent, double weightSent) {
         policyNumber = policyNumberSent;
         providerName = providerNameSent;
         firstName = firstNameSent;
@@ -49,7 +49,7 @@ public class Policy {
      * Gets the policy number
      * @return the policy number back to user
      */
-    public String getPolicyNumber() {
+    public int getPolicyNumber() {
         return policyNumber;
     }
 
@@ -57,7 +57,7 @@ public class Policy {
      * Sets the policy number
      * @param policyNumberSent the policy number from to user
      */
-    public void setPolicyNumber(String policyNumberSent) {
+    public void setPolicyNumber(int policyNumberSent) {
         policyNumber = policyNumberSent;
     }
 
@@ -145,7 +145,7 @@ public class Policy {
      * Gets the height
      * @return the height back to user
      */
-    public double getHeight() {
+    public int getHeight() {
         return height;
     }
 
@@ -153,7 +153,7 @@ public class Policy {
      * Sets the height
      * @param setHeight the height back to user
      */
-    public void setHeight(double heightSent) {
+    public void setHeight(int heightSent) {
         height = heightSent;
     }
 
@@ -161,7 +161,7 @@ public class Policy {
      * Gets the weight
      * @return the weight back to user
      */
-    public double getWeight() {
+    public int getWeight() {
         return weight;
     }
 
@@ -169,7 +169,7 @@ public class Policy {
      * Gets the weight
      * @param setWeight the weight from to user
      */
-    public void setWeight(double weightSent) {
+    public void setWeight(int weightSent) {
         weight = weightSent;
     }
 
@@ -177,7 +177,7 @@ public class Policy {
      * Calculating the BMI
      * @return the BMI back to user
      */
-    public double calculateBMI() {
+    public int calculateBMI() {
         return (weight * 703) / (height * height);
     }
 
@@ -185,9 +185,9 @@ public class Policy {
      * Calculates the price of the insurance policy
      * @return the total insurance policy price
      */
-    public double calculatePolicyPrice() {
-        final double BASEPRICE = 600;
-        double ADDITIONALFEE = 0;
+    public int calculatePolicyPrice() {
+        final int BASEPRICE = 600;
+        int ADDITIONALFEE = 0;
 
         // Checking if age is over 50, if so apply fee
         if (age > 50) {
@@ -200,7 +200,7 @@ public class Policy {
         }
 
         // Calculating BMI and check if BMI is greater than 35, if so apply fee
-        double bmi = calculateBMI();
+        int bmi = calculateBMI();
         if (bmi > 35) {
             ADDITIONALFEE += (bmi - 35) * 20;
         }

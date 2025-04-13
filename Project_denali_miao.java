@@ -10,14 +10,14 @@ public class Project_denali_miao {
 
         ArrayList<Policy> policyHolder = new ArrayList<Policy>();
 
-        String policyNumber = "";
+        int policyNumber = 0;
         String providerName = "";
         String firstName = "";
         String lastName = "";
         int age = 0;
         String smokingStatus = "";
-        double height = 0.0;
-        double weight = 0.0;
+        double height = 0;
+        double weight = 0;
 
         // Calls the Policy class
         Policy policy = new Policy();
@@ -31,14 +31,21 @@ public class Project_denali_miao {
         // Runs while loop thats displays all information in file
 
         while(inputFile.hasNext()) {
-            policyNumber = inputFile.nextLine();
+            policyNumber = inputFile.nextInt();
+            inputFile.nextLine();
             providerName = inputFile.nextLine();
             firstName = inputFile.nextLine();
             lastName = inputFile.nextLine();
             age = inputFile.nextInt();
+            inputFile.nextLine();
             smokingStatus = inputFile.nextLine();
             height = inputFile.nextDouble();
+            inputFile.nextLine();
             weight = inputFile.nextDouble();
+            
+            if(inputFile.hasNext()) {
+               inputFile.nextLine();            
+            }
 
             policy = new Policy(policyNumber, providerName, firstName, lastName, age, smokingStatus, height, weight);
             policyHolder.add(policy);
