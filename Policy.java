@@ -145,7 +145,7 @@ public class Policy {
      * Gets the height
      * @return the height back to user
      */
-    public int getHeight() {
+    public double getHeight() {
         return height;
     }
 
@@ -153,7 +153,7 @@ public class Policy {
      * Sets the height
      * @param setHeight the height back to user
      */
-    public void setHeight(int heightSent) {
+    public void setHeight(double heightSent) {
         height = heightSent;
     }
 
@@ -161,7 +161,7 @@ public class Policy {
      * Gets the weight
      * @return the weight back to user
      */
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 
@@ -169,7 +169,7 @@ public class Policy {
      * Gets the weight
      * @param setWeight the weight from to user
      */
-    public void setWeight(int weightSent) {
+    public void setWeight(double weightSent) {
         weight = weightSent;
     }
 
@@ -177,7 +177,7 @@ public class Policy {
      * Calculating the BMI
      * @return the BMI back to user
      */
-    public int calculateBMI() {
+    public double calculateBMI() {
         return (weight * 703) / (height * height);
     }
 
@@ -200,7 +200,7 @@ public class Policy {
         }
 
         // Calculating BMI and check if BMI is greater than 35, if so apply fee
-        int bmi = calculateBMI();
+        double bmi = calculateBMI();
         if (bmi > 35) {
             ADDITIONALFEE += (bmi - 35) * 20;
         }
