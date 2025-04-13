@@ -187,7 +187,7 @@ public class Policy {
      */
     public double calculatePolicyPrice() {
         final double BASEPRICE = 600;
-        final double ADDITIONALFEE = 0;
+        double ADDITIONALFEE = 0;
 
         // Checking if age is over 50, if so apply fee
         if (age > 50) {
