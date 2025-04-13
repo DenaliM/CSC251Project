@@ -23,14 +23,14 @@ public class Policy {
 
     /* 
         Constructor using arguments to apply values to private values
-        @policyNumberSent the policy number from the user
-        @providerNameSent the provider name from the user
-        @firstNameSent the first name from the user
-        @lastNameSent the last name from the user
-        @ageSent the age from the user
-        @smokingStatusSent the smoking status from the user
-        @heightSent the height from the user
-        @weightSent the weight from the user
+        @param policyNumberSent the policy number from the user
+        @param providerNameSent the provider name from the user
+        @param firstNameSent the first name from the user
+        @param lastNameSent the last name from the user
+        @param ageSent the age from the user
+        @param smokingStatusSent the smoking status from the user
+        @param heightSent the height from the user
+        @param weightSent the weight from the user
     */
     public Policy(String policyNumberSent, String providerNameSent, String firstNameSent, String lastNameSent, int ageSent, String smokingStatusSent, double heightSent, double weightSent) {
         policyNumber = policyNumberSent;
@@ -55,7 +55,7 @@ public class Policy {
 
     /*
      * Sets the policy number
-     * @policyNumberSent the policy number from to user
+     * @param policyNumberSent the policy number from to user
      */
     public void setPolicyNumber(String policyNumberSent) {
         policyNumber = policyNumberSent;
@@ -71,7 +71,7 @@ public class Policy {
 
     /*
      * Sets the provider name
-     * @providerNameSent the provider name from to user
+     * @param providerNameSent the provider name from to user
      */
     public void setProviderName(String providerNameSent) {
         providerName = providerNameSent;
@@ -87,7 +87,7 @@ public class Policy {
 
     /*
      * Sets the first name
-     * @firstNameSent the first name from to user
+     * @param firstNameSent the first name from to user
      */
     public void setFirstName(String firstNameSent) {
         firstName = firstNameSent;
@@ -103,7 +103,7 @@ public class Policy {
 
     /*
      * Sets the last name
-     * @lastNameSent the last name back to user
+     * @param lastNameSent the last name back to user
      */
     public void setLastName(String lastNameSent) {
         lastName = lastNameSent;
@@ -119,7 +119,7 @@ public class Policy {
 
     /*
      * Sets the age
-     * @ageSent the age from to user
+     * @param ageSent the age from to user
      */
     public void setAge(int ageSent) {
         age = ageSent;
@@ -135,7 +135,7 @@ public class Policy {
 
     /*
      * Sets the smoking status
-     * @setSmokingStatus the smoking status from to user
+     * @param setSmokingStatus the smoking status from to user
      */
     public void setSmokingStatus(String smokingStatusSent) {
         smokingStatus = smokingStatusSent;
@@ -151,7 +151,7 @@ public class Policy {
 
     /*
      * Sets the height
-     * @setHeight the height back to user
+     * @param setHeight the height back to user
      */
     public void setHeight(double heightSent) {
         height = heightSent;
@@ -167,7 +167,7 @@ public class Policy {
 
     /*
      * Gets the weight
-     * @setWeight the weight from to user
+     * @param setWeight the weight from to user
      */
     public void setWeight(double weightSent) {
         weight = weightSent;
