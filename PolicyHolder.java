@@ -17,6 +17,15 @@ public class PolicyHolder {
         weight = 0;
     }
     
+    /* 
+        Constructor using arguments to apply values to private values
+        @param firstNameSent the first name from the user
+        @param lastNameSent the last name from the user
+        @param ageSent the age from the user
+        @param smokingStatusSent the smoking status from the user
+        @param heightSent the height from the user
+        @param weightSent the weight from the user
+    */
     public PolicyHolder(String firstNameSent, String lastNameSent, int ageSent, String smokingStatusSent, double heightSent, double weightSent) {
         firstName = firstNameSent;
         lastName = lastNameSent;
@@ -130,6 +139,16 @@ public class PolicyHolder {
      */
     public double calculateBMI() {
         return (weight * 703) / (height * height);
+    }
+    
+    /*
+     * Formats all information into a string
+     * @return the information about the policy as a string
+     */
+    public String toString() {
+      return String.format("Policyholder's First Name: " + firstName + "\nPolicyholder's Last Name: " + lastName + "\nPolicyholder's Age: " + age
+             + "\nPolicyholder's Smoking Status: " + smokingStatus + "\nPolicyholder's Height: " + height + "\nPolicyholder's Weight: " + weight
+             + "\nPolicyholder's BMI:%.2f" + "\nPolicy Price: $%.2f", calculateBMI(), calculatePolicyPrice();)
     }
 
 }
