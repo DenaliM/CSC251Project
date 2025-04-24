@@ -2,6 +2,7 @@ public class Policy {
     // Variables
     private int policyNumber;
     private String providerName;
+    private PolicyHolder policyHolder; //Instance of the PolicyHolder class
 
     // Setting the default values using a no-arg constructor
     public Policy() {
@@ -14,9 +15,10 @@ public class Policy {
         @param policyNumberSent the policy number from the user
         @param providerNameSent the provider name from the user
     */
-    public Policy(int policyNumberSent, String providerNameSent) {
+    public Policy(int policyNumberSent, String providerNameSent, PolicyHolder holder) {
         policyNumber = policyNumberSent;
         providerName = providerNameSent;
+        policyHolder = new policyHolder(holder);
     }
 
     // All necessary getter and setter methods
@@ -79,5 +81,13 @@ public class Policy {
 
         // Adding everything together to get a total
         return BASEPRICE + ADDITIONALFEE;
+    }
+    
+    /*
+     * Formats all information into a string
+     * @return the information about the policy as a string
+     */
+    public String toString() {
+      return "Policy Number: " + policyNumber + "\nProvider Name: " + providerName + "\n" + policyHolder.toString();
     }
 }
