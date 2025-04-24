@@ -24,6 +24,7 @@ public class Project_denali_miao {
 
         // Calls the Policy class
         Policy policy = new Policy();
+        PolicyHolder policyHolderJava = new PolicyHolder();
 
         if(!policyFile.exists()) {
             System.out.println("Unable to find file.");
@@ -56,31 +57,24 @@ public class Project_denali_miao {
                nonSmokerCount++;
             }
 
-            policy = new Policy(policyNumber, providerName, firstName, lastName, age, smokingStatus, height, weight);
+            policyHolderJava = new PolicyHolder(firstName, lastName, age, smokingStatus, height, weight);
+            
+            policy = new Policy(policyNumber, providerName, policyHolderJava);
             policyHolder.add(policy);
         }
         
+        int policyCount = 0;
+        
         for(int i = 0; i < policyHolder.size(); i++) {
             // Display information about the policy
-            System.out.println("\nPolicy Number: " + policyHolder.get(i).getPolicyNumber());
-            System.out.println("Provider Name: " + policyHolder.get(i).getProviderName());
-            System.out.println("Policyholder's First Name: " + policyHolder.get(i).getFirstName());
-            System.out.println("Policyholder's Last Name: " + policyHolder.get(i).getLastName());
-            System.out.println("Policyholder's Age: " + policyHolder.get(i).getAge());
-            System.out.println("Policyholder's Smoking Status: " + policyHolder.get(i).getSmokingStatus());
-            System.out.println("Policyholder's Height: " + policyHolder.get(i).getHeight() + " inches");
-            System.out.println("Policyholder's Weight: " + policyHolder.get(i).getWeight() + " pounds");
-
-            // Calculate and display BMI and price
-            double bmi = policyHolder.get(i).calculateBMI();
-            double price = policyHolder.get(i).calculatePolicyPrice();
-
-            System.out.println("Policyholder's BMI: " + String.format("%.2f", bmi));
-            System.out.println("Policy Price: $" + String.format("%.2f", price));   
+            System.out.println(policyHolder.get(i));
+            System.out.println("\n"); 
+            policyCount = policyHolder.get(i).getPolicyCount();
         }
         
-        System.out.println("\n\nThe number of policies with a smoker is: " + smokerCount);
-        System.out.println("TThe number of policies with a non-smoker is: " + nonSmokerCount);
+        System.out.println("There were " + policyCount + " Policy objects created.");
+        System.out.println("\nThe number of policies with a smoker is: " + smokerCount);
+        System.out.println("The number of policies with a non-smoker is: " + nonSmokerCount);
 
         inputFile.close();
     }

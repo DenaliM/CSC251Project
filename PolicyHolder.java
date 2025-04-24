@@ -17,6 +17,20 @@ public class PolicyHolder {
         weight = 0;
     }
     
+    /*The copy constructor creates a copy of the PolicyHolder class that it is passed as a parameter.
+     To avoid secuirty holes
+     @param policy2 - the policy to copy
+    */
+    public PolicyHolder(PolicyHolder policy2) {
+       firstName = policy2.firstName;
+       lastName = policy2.lastName;
+       age = policy2.age;
+       smokingStatus = policy2.smokingStatus;
+       height = policy2.height;
+       weight = policy2.weight;
+    }
+
+    
     /* 
         Constructor using arguments to apply values to private values
         @param firstNameSent the first name from the user
@@ -142,13 +156,48 @@ public class PolicyHolder {
     }
     
     /*
+     * Calculates the price of the insurance policy
+     * @return the total insurance policy price
+     */
+    public double calculatePolicyPrice() {
+        final double BASEPRICE = 600.0;
+        double ADDITIONALFEE = 0.0;
+
+        // Checking if age is over 50, if so apply fee
+        if (age > 50) {
+            ADDITIONALFEE += 75;
+        }
+
+        // Checking if smoking status is smoker, if so apply fee
+        if (smokingStatus.equals("smoker")) {
+            ADDITIONALFEE += 100;
+        }
+
+        // Calculating BMI and check if BMI is greater than 35, if so apply fee
+        double bmi = calculateBMI();
+        if (bmi > 35) {
+            ADDITIONALFEE += ((bmi - 35) * 20);
+        }
+
+        // Adding everything together to get a total
+        return (BASEPRICE + ADDITIONALFEE);
+    }
+
+    
+    /*
      * Formats all information into a string
      * @return the information about the policy as a string
      */
     public String toString() {
-      return String.format("Policyholder's First Name: " + firstName + "\nPolicyholder's Last Name: " + lastName + "\nPolicyholder's Age: " + age
-             + "\nPolicyholder's Smoking Status: " + smokingStatus + "\nPolicyholder's Height: " + height + "\nPolicyholder's Weight: " + weight
-             + "\nPolicyholder's BMI:%.2f" + "\nPolicy Price: $%.2f", calculateBMI(), calculatePolicyPrice();)
+      double bmi = calculateBMI();
+      return String.format("Policyholder's First Name: " + firstName 
+                           + "\nPolicyholder's Last Name: " + lastName 
+                           + "\nPolicyholder's Age: " + age
+                           + "\nPolicyholder's Smoking Status: " + smokingStatus 
+                           + "\nPolicyholder's Height: " + height 
+                           + "\nPolicyholder's Weight: " + weight
+                           + "\nPolicyholder's BMI: %.2f"
+                           + "\nPolicy Price: $%.2f", bmi, calculatePolicyPrice());
     }
 
 }

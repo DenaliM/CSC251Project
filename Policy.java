@@ -20,7 +20,7 @@ public class Policy {
     public Policy(int policyNumberSent, String providerNameSent, PolicyHolder holder) {
         policyNumber = policyNumberSent;
         providerName = providerNameSent;
-        policyHolder = new policyHolder(holder);
+        policyHolder = new PolicyHolder(holder);
     }
 
     // All necessary getter and setter methods
@@ -63,34 +63,6 @@ public class Policy {
     */
     public static int getPolicyCount() {
       return policyCount;
-    }
-
-    /*
-     * Calculates the price of the insurance policy
-     * @return the total insurance policy price
-     */
-    public int calculatePolicyPrice() {
-        final int BASEPRICE = 600;
-        int ADDITIONALFEE = 0;
-
-        // Checking if age is over 50, if so apply fee
-        if (age > 50) {
-            ADDITIONALFEE += 75;
-        }
-
-        // Checking if smoking status is smoker, if so apply fee
-        if (smokingStatus.equals("smoker")) {
-            ADDITIONALFEE += 100;
-        }
-
-        // Calculating BMI and check if BMI is greater than 35, if so apply fee
-        double bmi = calculateBMI();
-        if (bmi > 35) {
-            ADDITIONALFEE += (bmi - 35) * 20;
-        }
-
-        // Adding everything together to get a total
-        return BASEPRICE + ADDITIONALFEE;
     }
     
     /*
