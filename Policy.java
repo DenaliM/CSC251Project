@@ -3,11 +3,13 @@ public class Policy {
     private int policyNumber;
     private String providerName;
     private PolicyHolder policyHolder; //Instance of the PolicyHolder class
+    private static int policyCount;
 
     // Setting the default values using a no-arg constructor
     public Policy() {
         policyNumber = 0;
         providerName = "";
+        policyCount = 0;
     }
 
     /* 
@@ -47,12 +49,20 @@ public class Policy {
         return providerName;
     }
 
-    /*
-     * Sets the provider name
-     * @param providerNameSent the provider name from to user
-     */
+  /*
+   * Sets the provider name
+   * @param providerNameSent the provider name from to user
+   */
     public void setProviderName(String providerNameSent) {
         providerName = providerNameSent;
+    }
+    
+   /*
+    * Gets the policy count
+    * @return the number of times it made a policy
+    */
+    public static int getPolicyCount() {
+      return policyCount;
     }
 
     /*
@@ -88,6 +98,7 @@ public class Policy {
      * @return the information about the policy as a string
      */
     public String toString() {
+      policyCount++;
       return "Policy Number: " + policyNumber + "\nProvider Name: " + providerName + "\n" + policyHolder.toString();
     }
 }
